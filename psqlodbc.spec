@@ -44,5 +44,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n %libname
 %defattr(-,root,root)
-%_libdir/*
+%_libdir/psqlodbc*
 %doc docs
