@@ -20,7 +20,7 @@ BuildRequires: postgresql-devel
 The official PostgreSQL ODBC Driver.
 
 %package -n %libname
-Group: Database
+Group: Databases
 Summary: The official PostgreSQL ODBC Driver
 
 %description -n %libname
