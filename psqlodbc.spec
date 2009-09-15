@@ -1,6 +1,6 @@
 %define name psqlodbc
 %define version 08.03.0300
-%define release %mkrel 1
+%define release %mkrel 2
 
 %define libname %mklibname %name
 
