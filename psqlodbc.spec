@@ -1,14 +1,11 @@
-%define name psqlodbc
-%define version 08.03.0300
-%define release %mkrel 2
-
-%define libname %mklibname %name
+%define libname %mklibname psqlodbc
 
 Summary: The official PostgreSQL ODBC Driver
-Name: %{name}
-Version: %{version}
-Release: %{release}
-Source0: %{name}-%{version}.tar.gz
+Name: psqlodbc
+Version: 08.04.0100
+Release: %mkrel 1
+Source0: http://wwwmaster.postgresql.org/download/mirrors-ftp/odbc/versions/src/%{name}-%{version}.tar.gz
+Patch0: psqlodbc-08.04.0100-fix-build.patch
 License: LGPL
 Group: Databases
 Url: http://www.postgresql.org/
@@ -28,15 +25,14 @@ The official PostgreSQL ODBC Driver.
 
 %prep 
 %setup -q
+%patch0 -p0
 
 %build
-%configure
-
+%configure2_5x
 %make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 %makeinstall_std
 
 %clean
