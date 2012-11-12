@@ -1,0 +1,33 @@
+--- odbcapi30.c~	2008-10-06 23:46:09.000000000 +0200
++++ odbcapi30.c	2009-11-23 11:10:06.000000000 +0100
+@@ -120,7 +120,7 @@
+ 			SQLSMALLINT *StringLength,
+ #if defined(_WIN64)
+ 			SQLLEN *NumericAttribute
+-#elif defined(WITH_UNIXODBC) || defined(WIN32)
++#elif defined(WITH_OLDUNIXODBC) || defined(WIN32)
+ 			SQLPOINTER NumericAttribute
+ #else
+ 			SQLLEN *NumericAttribute
+--- odbcapi30w.c~	2009-03-22 15:17:10.000000000 +0100
++++ odbcapi30w.c	2009-11-23 11:10:31.000000000 +0100
+@@ -262,7 +262,7 @@
+ 	SQLPOINTER	pCharAttr,
+ 	SQLSMALLINT	cbCharAttrMax,	
+ 	SQLSMALLINT	*pcbCharAttr,
+-#if defined(WITH_UNIXODBC) || (defined(WIN32) && ! defined(_WIN64))
++#if defined(WITH_OLDUNIXODBC) || (defined(WIN32) && ! defined(_WIN64))
+ 	SQLPOINTER	pNumAttr
+ #else
+ 	SQLLEN		*pNumAttr
+--- odbcapi.c~	2008-11-23 02:00:53.000000000 +0100
++++ odbcapi.c	2009-11-23 11:19:05.000000000 +0100
+@@ -1111,7 +1111,7 @@
+ 				 HSTMT hstmt,
+ 				 SQLUSMALLINT fFetchType,
+ 				 SQLLEN irow,
+-#ifdef WITH_UNIXODBC
++#ifdef WITH_OLDUNIXODBC
+ 				 SQLROWSETSIZE *pcrow,
+ #else
+ 				 SQLULEN *pcrow,
