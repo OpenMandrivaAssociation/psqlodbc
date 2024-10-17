@@ -8,7 +8,7 @@ Source0: http://wwwmaster.postgresql.org/download/mirrors-ftp/odbc/versions/src/
 Patch0: psqlodbc-08.04.0100-fix-build.patch
 License: LGPL
 Group: Databases
-Url: http://www.postgresql.org/
+Url: https://www.postgresql.org/
 BuildRoot: %{_tmppath}/%{name}-buildroot
 BuildRequires: unixODBC-devel
 BuildRequires: postgresql-devel
