@@ -10,6 +10,11 @@ License: LGPL
 Group: Databases
 Url: https://www.postgresql.org/
 BuildRoot: %{_tmppath}/%{name}-buildroot
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires: unixODBC-devel
 BuildRequires: postgresql-devel
 
